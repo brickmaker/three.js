@@ -34,7 +34,7 @@ function Interpolant( parameterPositions, sampleValues, sampleSize, resultBuffer
 
 Object.assign( Interpolant.prototype, {
 
-	evaluate: function ( t ) {
+	evaluate: function ( t ) { // TODO: 完全看不懂
 
 		var pp = this.parameterPositions,
 			i1 = this._cachedIndex,

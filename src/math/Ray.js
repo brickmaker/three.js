@@ -122,7 +122,7 @@ Object.assign( Ray.prototype, {
 
 	},
 
-	distanceSqToSegment: function ( v0, v1, optionalPointOnRay, optionalPointOnSegment ) {
+	distanceSqToSegment: function ( v0, v1, optionalPointOnRay, optionalPointOnSegment ) { // TODO 不懂相关的算法
 
 		// from http://www.geometrictools.com/GTEngine/Include/Mathematics/GteDistRaySegment.h
 		// It returns the min distance between the ray and the segment
@@ -277,7 +277,7 @@ Object.assign( Ray.prototype, {
 
 	},
 
-	distanceToPlane: function ( plane ) {
+	distanceToPlane: function ( plane ) { // N> 感觉不太符合直觉，为啥不相交的距离没有意义，相交了距离是原点的距离？ 哦，应该是，原点沿方向到达平面的距离
 
 		var denominator = plane.normal.dot( this.direction );
 
@@ -419,7 +419,7 @@ Object.assign( Ray.prototype, {
 
 	},
 
-	intersectTriangle: function ( a, b, c, backfaceCulling, target ) {
+	intersectTriangle: function ( a, b, c, backfaceCulling, target ) { // TODO: 实现先放下
 
 		// Compute the offset origin, edges, and normal.
 
