@@ -1224,7 +1224,7 @@ GLTFExporter.prototype = {
 
 			}
 
-			// @QUESTION Detect if .vertexColors = THREE.VertexColors?
+			// @QUESTION Detect if .vertexColors = true?
 			// For every attribute create an accessor
 			var modifiedAttribute = null;
 			for ( var attributeName in geometry.attributes ) {
@@ -1668,6 +1668,9 @@ GLTFExporter.prototype = {
 			var node = outputJSON.nodes[ nodeMap.get( object ) ];
 
 			var skeleton = object.skeleton;
+
+			if ( skeleton === undefined ) return null;
+
 			var rootJoint = object.skeleton.bones[ 0 ];
 
 			if ( rootJoint === undefined ) return null;
@@ -1922,12 +1925,6 @@ GLTFExporter.prototype = {
 			if ( scene.name !== '' ) {
 
 				gltfScene.name = scene.name;
-
-			}
-
-			if ( scene.userData && Object.keys( scene.userData ).length > 0 ) {
-
-				gltfScene.extras = serializeUserData( scene );
 
 			}
 

@@ -72,6 +72,7 @@ export class Matrix3 implements Matrix {
 	identity(): Matrix3;
 	clone(): this;
 	copy( m: Matrix3 ): this;
+	extractBasis( xAxis: Vector3, yAxis: Vector3, zAxis: Vector3 ): Matrix3;
 	setFromMatrix4( m: Matrix4 ): Matrix3;
 	multiplyScalar( s: number ): Matrix3;
 	determinant(): number;
@@ -86,7 +87,7 @@ export class Matrix3 implements Matrix {
 	/**
 	 * Transposes this matrix into the supplied array r, and returns itself.
 	 */
-	transposeIntoArray( r: number[] ): number[];
+	transposeIntoArray( r: number[] ): Matrix3;
 
 	setUvTransform( tx: number, ty: number, sx: number, sy: number, rotation: number, cx: number, cy: number ): Matrix3;
 

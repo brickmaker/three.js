@@ -822,7 +822,7 @@ THREE.FBXLoader = ( function () {
 
 					var transform = generateTransform( node.userData.transformData );
 
-					node.applyMatrix( transform );
+					node.applyMatrix4( transform );
 
 				}
 
@@ -1202,7 +1202,7 @@ THREE.FBXLoader = ( function () {
 
 				materials.forEach( function ( material ) {
 
-					material.vertexColors = THREE.VertexColors;
+					material.vertexColors = true;
 
 				} );
 
